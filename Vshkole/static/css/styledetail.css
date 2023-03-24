@@ -1,0 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@200&family=Unbounded&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Sofia+Sans+Semi+Condensed:wght@200&family=Space+Mono:wght@700&family=Unbounded&display=swap');
+@media screen and (max-width: 1920px){
+html{
+    /*width: 100%;
+    max-width: 100%; //тоже самое в body прописать*/
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header{
+    /*border: 2px solid aqua; /*режим отладки*/
+    margin: 10px 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    /*border: 2px solid green; /*режим отладки*/
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+}
+/*логотип-ссылка*/
+.link_logo{
+    color: black;
+    text-decoration: none;
+}
+.link_logo:visited {
+    color: black;/* Цвет посещенных ссылок */
+    text-decoration: none;
+}
+.link_logo:active {
+    color: black; /* Цвет активных ссылок */
+    text-decoration: none;
+}
+
+
+.box1{
+    /*border: 2px solid red; /*режим отладки*/
+    background-color: white;
+    height: 80px;
+    width: 296.45px;
+    overflow: hidden;
+    border-radius: 5px;  /*стрём-решение(изменено:'норм решение')*/
+}
+.text-1{
+
+    font-weight: bold;
+    font-size: 49px;
+    background-color: white;
+    padding: 10px;
+    /*line-height: 80px;*/
+}
+
+.box2{
+    /*border: 2px solid red; /*режим отладки*/
+    background-color: black;
+    height: 80px;
+    width: 209.09px;
+    overflow: hidden;
+}
+.text-2{
+
+    font-weight: bold;
+    font-size: 49px;
+    color: white;
+    padding: 10px;
+
+}
+.border_logo{
+    border:2px solid white;
+    margin-top: 20px;
+    height: 0px;
+    width: 300px;
+    animation: scaler 1s 0s forwards ease-in-out;
+}
+/* навигация */
+nav{
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+nav a:hover {
+    background-size: 100% 2px;
+}
+main{
+    background-color:white;
+    margin: 20px 200px;
+    border-radius: 20px;
+}
+/* Пост */
+.projects{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    align-items:center;
+
+}
+.projects h2{
+    color:#FF5A68;
+    font-size: 42px;
+}
+.projects img{
+   width:900px;
+   border-radius:25px;
+}
+.item_description{
+    width:1000px;
+}
+.text_description p{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 36px;
+}
+#p222{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 18px;
+}
+.likes{
+    display: flex;
+    flex-direction: row;
+    text-align:center;
+    align-items:center;
+    justify-content: center;
+}
+.likes img{
+    border: 2px solid black;
+    border-radius: 50%;
+    margin:20px;
+}
+.likes p{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 24px;
+    margin:20px;
+}
+/* Формочка*/
+.form-comment{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    border-top: 2px solid black;
+}
+.form-comment h3{
+    font-size: 24px;
+}
+.form-comment p{
+    font-size: 20px;
+}
+.form-comment label{
+    margin:10px;
+}
+.form-comment input{
+    border-radius: 15px;
+    padding: 15px;
+    height: 50px;
+    weight: 250px;
+}
+.form-comment textarea{
+    border-radius: 15px;
+    padding: 15px;
+    height: 150px;
+    width: 50%;
+    resize: vertical;
+}
+.form-comment div{
+    margin: 10px;
+}
+.view-comment{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    margin: 50px 300px;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius:20px;
+
+}
+/*footer*/
+.footer{
+    padding: 60px 0 50px;
+    background-color: #000;
+    color: #ffffff;
+}
+.footer_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*по оси Y*/
+    row-gap: 27px;
+}
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 70px;
+    padding-left: 0;
+}
+.social_item{
+    list-style-type: none; /* Убираем маркеры */
+}
+.copyright{
+    font-size: 16px;
+}
+.img_footer{
+    transform: scale(1.5);
+}
+/*стилизованный скроллбар*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+@keyframes scaler {
+    0%{
+        transform: scaleX(1);
+        opacity: 0;
+    }
+    1%{
+        opacity: 1;
+    }
+    100%{
+        transform: scaleX(6);
+        opacity: 1;
+    }
+}
+}
+@media screen and (max-width: 1000px){
+header{
+    /*border: 2px solid aqua; /*режим отладки*/
+    margin: 1px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box1{
+    /*border: 2px solid red; /*режим отладки*/
+    background-color: white;
+    height: 40px;
+    /*max-width: 153.45px;*/
+    max-width: 153.45px;
+    overflow: hidden;
+    border-radius: 5px;  /*стрём-решение*/
+    display: flex;
+    text-align: center;
+    margin-left: -65px; /*для анимации*/
+    animation: logo_animation_margin 0.3s 1s forwards ease-in-out;
+}
+.text-1{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 20px;
+    background-color: white;
+    padding: 10px;
+    /*line-height: 80px;*/
+}
+.box2{
+    /*border: 2px solid red; /*режим отладки*/
+    background-color: black;
+    height: 40px;
+    max-width: 110px;
+    overflow: hidden;
+}
+.text-2{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 20px;
+    color: white;
+    padding: 10px;
+}
+.border_logo{
+    border:2px solid white;
+    margin-top: 20px;
+    height: 0px;
+    width: 300px;
+    animation: scaler 1s 0s forwards ease-in-out;
+}
+/* навигация */
+nav{
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+nav a:hover {
+    background-size: 100% 2px;
+}
+main{
+    background-color:white;
+    margin: 20px 50px;
+    border-radius: 20px;
+}
+/* Пост */
+.projects{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    align-items:center;
+
+}
+.projects h2{
+    color:#FF5A68;
+    font-size: 30px;
+}
+.projects img{
+   width:500px;
+   border-radius:25px;
+}
+.item_description{
+    width:500px;
+}
+.text_description p{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 24px;
+}
+#p222{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 18px;
+}
+.likes img{
+    border: 2px solid black;
+    border-radius: 50%;
+    margin:20px;
+}
+.likes p{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 18px;
+    margin:20px;
+}
+/* Формочка*/
+.form-comment{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    border-top: 2px solid black;
+}
+.form-comment h3{
+    font-size: 24px;
+}
+.form-comment p{
+    font-size: 20px;
+}
+.form-comment label{
+    margin:10px;
+}
+.form-comment input{
+    border-radius: 15px;
+    padding: 15px;
+    height: 50px;
+    weight: 250px;
+}
+.form-comment textarea{
+    border-radius: 15px;
+    padding: 15px;
+    height: 150px;
+    width: 50%;
+    resize: vertical;
+}
+.form-comment div{
+    margin: 10px;
+}
+.view-comment{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    margin: 50px 50px;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius:20px;
+
+}
+/*footer*/
+.footer{
+    padding: 60px 0 50px;
+    background-color: #000;
+    color: #ffffff;
+}
+.footer_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*по оси Y*/
+    row-gap: 27px;
+}
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 70px;
+    padding-left: 0;
+}
+.social_item{
+    list-style-type: none; /* Убираем маркеры */
+}
+.copyright{
+    font-size: 16px;
+}
+.img_footer{
+    transform: scale(1.5);
+}
+}
+@media screen and (max-width: 600px){
+header{
+    /*border: 2px solid aqua; /*режим отладки*/
+    margin: 1px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box1{
+    /*border: 2px solid red; /*режим отладки*/
+    background-color: white;
+    height: 40px;
+    /*max-width: 153.45px;*/
+    max-width: 153.45px;
+    overflow: hidden;
+    border-radius: 5px;  /*стрём-решение*/
+    display: flex;
+    text-align: center;
+    margin-left: -65px; /*для анимации*/
+    animation: logo_animation_margin 0.3s 1s forwards ease-in-out;
+}
+.text-1{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 20px;
+    background-color: white;
+    padding: 10px;
+    /*line-height: 80px;*/
+}
+.box2{
+    /*border: 2px solid red; /*режим отладки*/
+    background-color: black;
+    height: 40px;
+    max-width: 110px;
+    overflow: hidden;
+}
+.text-2{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 20px;
+    color: white;
+    padding: 10px;
+}
+.border_logo{
+    border:2px solid white;
+    margin-top: 20px;
+    height: 0px;
+    width: 50px;
+    animation: scaler 1s 0s forwards ease-in-out;
+}
+.logo{
+    /*border: 2px solid green; /*режим отладки*/
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    margin-left:70px;
+}
+/* навигация */
+nav{
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+main{
+    background-color:white;
+    margin: 10px 10px;
+    border-radius: 20px;
+}
+/* Пост */
+.projects h2{
+    color:#FF5A68;
+    font-size: 24px;
+}
+.projects img{
+   width:300px;
+   border-radius:25px;
+}
+.item_description{
+    width:400px;
+}
+.text_description p{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 20px;
+}
+#p222{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 18px;
+}
+.likes img{
+    border: 2px solid black;
+    border-radius: 50%;
+    margin:20px;
+}
+.likes p{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 20px;
+    margin:20px;
+}
+/* Формочка*/
+.form-comment{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /*классный шрифт*/
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    border-top: 2px solid black;
+}
+.form-comment h3{
+    font-size: 24px;
+}
+.form-comment p{
+    font-size: 20px;
+}
+.form-comment label{
+    margin:10px;
+}
+.form-comment input{
+    border-radius: 15px;
+    padding: 15px;
+    height: 50px;
+    weight: 250px;
+}
+.form-comment textarea{
+    border-radius: 15px;
+    padding: 15px;
+    height: 150px;
+    width: 100%;
+    resize: vertical;
+}
+.form-comment div{
+    margin: 10px;
+}
+.view-comment{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    margin: 50px 20px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius:20px;
+
+}
+/*footer*/
+.footer{
+    padding: 60px 0 50px;
+    background-color: #000;
+    color: #ffffff;
+}
+.footer_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*по оси Y*/
+    row-gap: 27px;
+}
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 70px;
+    padding-left: 0;
+}
+.social_item{
+    list-style-type: none; /* Убираем маркеры */
+}
+.copyright{
+    font-size: 16px;
+}
+.img_footer{
+    transform: scale(1.5);
+}
+}

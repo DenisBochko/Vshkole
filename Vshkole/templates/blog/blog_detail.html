@@ -1,0 +1,120 @@
+{% load static %}
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Чёрным по | Белому</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{% static 'css/styledetail.css' %}" type="text/css" media="all" />
+	<link rel="shortcut icon" href="css/images/favicon.ico"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon2/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon2/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon2/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon2/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'favicon2/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+<div class="page">
+	<!--Шапка сайта-->
+    <header>
+	    <div class="logo" >
+		    <a href="/" class="link_logo">
+			    <div class="box1">
+				    <div class="text-1">Чёрным по</div>
+			    </div>
+		    </a>
+		    <a href="/" class="link_logo">
+			    <div class="box2">
+				    <div class="text-2">Белому</div>
+			    </div>
+		    </a>
+	    </div>
+	    <div class="border_logo"></div>
+	</header>
+	<!--Навигация по сайту-->
+	<nav>
+		<a href="/" class="link_nav">Главная</a>
+
+	</nav>
+	<main>
+		<div class="projects">
+			<h2>{{ post.title }}</h2>
+			<p>
+				<img src="{{ post.img.url }}" alt=""/>
+			</p>
+			<div class="item_description">
+				<div class="text_description">
+					<p>{{ post.description }}</p>
+					<p id="p222">Автор: {{ post.author }} </p>
+				</div>
+			</div>
+		</div>
+
+
+			<div class="likes">
+				<br>
+				<a href="{% url 'add_likes' post.id %}"><img src="{% static 'images/icons/like64.png' %}" alt=""/></a>
+				<br>
+				<p>Понравилось: {{ post.likes_set.all.count }}</p>
+			</div>
+
+			<div class="form-comment">
+				<h3>Оставить комментарий</h3>
+				<div>
+					<form action="{% url 'add_comments' post.id%}" method="post">
+						{% csrf_token %}
+						<div>
+							<p>Ваш комментарий</p>
+							<textarea name="text_comments"></textarea>
+						</div>
+						<div>
+							<label>Ваше имя*</label>
+							<input type="text" name="name">
+						</div>
+						<div>
+							<label>Ваш email*</label>
+							<input type="email" name="email">
+						</div>
+						<div>
+							<input type="submit">
+						</div>
+					</form>
+				</div>
+			</div>
+			<div>
+				{% for comment in post.comments_set.all %}
+				<div class="view-comment">
+					<h4>{{ comment.name }}:</h4>
+					<p>
+						{{ comment.text_comments }}
+					</p>
+				</div>
+				{% endfor %}
+			</div>
+	</main>
+
+
+
+	<!--Подвал сайта-->
+    <footer class="footer">
+        <div class="container_footer">
+            <div class="footer_wrapper">
+                <ul class="social">
+                    <li class="social_item"><a href="https://vk.com/school10_rostov" target="_blank"><img class="img_footer" src="{% static '/images/icons/vk.svg' %}" alt="Link"></a></li>
+                    <li class="social_item"><a href="https://www.youtube.com/@ExtremeCode" target="_blank"><img class="img_footer" src="{% static '/images/icons/youtube.svg' %}" alt="Link"></a></li>
+                    <li class="social_item"><a href="https://github.com/DenisBochko/Black-on-White-django.git" target="_blank"><img class="img_footer" src="{% static '/images/icons/gitHub.svg' %}" alt="Link"></a></li>
+                </ul>
+                <div class="copyright">
+                    <p>© 2023 ЧПБ</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
